@@ -27,6 +27,8 @@ Place additional datasets in the project root or a `data/` folder and update not
 
 - `GAMMA.ipynb` — primary notebook to run experiments and follow along with examples.
 
+- `Bikes_Regression.ipynb` — regression walkthrough using the Seoul Bike Sharing dataset.
+
 Suggested structure for new notebooks:
 
 1. Problem statement and objective
@@ -75,6 +77,21 @@ jupyter notebook GAMMA.ipynb
 - Compare model performance with cross-validation and nested cross-validation for hyperparameter tuning.
 - Learn and apply model interpretability techniques (SHAP, permutation importance).
 - Experiment with ensembles (bagging, boosting) and simple neural networks.
+
+**Bikes Regression Notebook — Key Concepts**
+
+- **Dataset:** Seoul Bike Sharing Demand (SeoulBikeData.csv) from UCI.
+- **Preprocessing:** renaming columns, encoding boolean `functional`, dropping unused columns (`Date`, `Hour`, `Holiday`, `Seasons`, and later `visibility`, `functional`), and basic EDA with scatter plots.
+- **Train/Val/Test Split:** random shuffle split into 60% train / 20% val / 20% test.
+- **Feature extraction helper:** `get_xy()` to build X and Y arrays for modeling.
+- **Models explored:**
+	- Single-feature Linear Regression (temperature vs bike count).
+	- Multiple Linear Regression using selected numeric features.
+	- Neural network regressors with TensorFlow/Keras: simple 1-layer and deeper models (two hidden layers of 32 units, ReLU).
+- **Normalization:** use of `tf.keras.layers.Normalization` to adapt feature scaling inside the model pipeline.
+- **Training details:** Adam optimizer, Mean Squared Error loss, training with validation data and plotting training/validation loss curves.
+- **Evaluation:** compute MSE on test set and compare linear regression vs neural network predictions; visual comparison via scatter plots of true vs predicted values.
+
 
 ## Resources
 
