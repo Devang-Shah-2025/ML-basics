@@ -93,6 +93,16 @@ jupyter notebook GAMMA.ipynb
 - **Evaluation:** compute MSE on test set and compare linear regression vs neural network predictions; visual comparison via scatter plots of true vs predicted values.
 
 
+**Seeds Unsupervised Notebook — Key Concepts**
+
+- **Dataset:** Seeds dataset (`seeds_dataset.txt`) with features `area`, `perimeter`, `compactness`, `length`, `width`, `asymmetry`, `groove`, and `class` (true label).
+- **EDA:** pairwise scatterplots to inspect feature relationships and class separability (colored by `class`).
+- **Clustering:** used `KMeans` (scikit-learn) — demo with `compactness` vs `asymmetry` and `n_clusters=3`, examined cluster assignments (`kmeans.labels_`) and compared to the ground-truth `class` visually.
+- **Higher-dimensional clustering:** fit KMeans on all numeric features and inspect cluster assignments projected onto selected feature pairs.
+- **PCA:** applied `PCA(n_components=2)` to reduce dimensionality for visualization; compared KMeans cluster assignments and true class labels in the PCA plane.
+- **Takeaways:** feature selection matters, PCA is useful for visualizing high-dimensional clustering, and unsupervised clusters may or may not align with labeled classes — visual inspection and comparison to ground truth help interpret clustering results.
+
+
 ## Resources
 
 - scikit-learn documentation: https://scikit-learn.org
